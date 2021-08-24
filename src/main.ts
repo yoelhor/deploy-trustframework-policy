@@ -33,8 +33,7 @@ async function main() {
     }
     else
     {
-      core.error('Policy file ' + file + ' not found.')
-      core.setFailed();
+      core.warning('Policy file ' + file + ' not found.')
     }
 
   } catch (error) {
