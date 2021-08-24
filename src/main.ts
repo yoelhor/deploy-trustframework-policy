@@ -29,11 +29,11 @@ async function main() {
         .api(`trustFramework/policies/${policy}/$value`)
         .putStream(fileStream);
 
-      core.info('Policy file ' + file + ' has been updated successfully.');
+      core.notice('Policy file ' + file + ' has been updated successfully.');
     }
     else
     {
-      core.notice('Policy file ' + file + ' not found.')
+      core.warning('Policy file ' + file + ' not found.')
     }
 
   } catch (error) {
