@@ -17,9 +17,9 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.5.0",
-    "@microsoft/microsoft-graph-client": "^2.0.0",
-    "node-fetch": "^2.6.0",
-    "openid-client": "^3.14.0"
+    "@microsoft/microsoft-graph-client": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "openid-client": "^4.7.4"
   },
   "devDependencies": {
     "@types/node": "^16.3.3",

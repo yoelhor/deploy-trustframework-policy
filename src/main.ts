@@ -29,7 +29,7 @@ async function main() {
         .api(`trustFramework/policies/${policy}/$value`)
         .putStream(fileStream);
 
-      core.notice('Policy file ' + file + ' has been updated successfully.');
+      core.notice('Policy file ' + file + ' has been uploaded successfully.');
     }
     else
     {
