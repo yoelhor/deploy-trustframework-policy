@@ -21,12 +21,19 @@ async function main() {
       defaultVersion: 'beta'
     });
 
-    let fileStream = fs.createReadStream(file);
-    let response = await client
-      .api(`trustFramework/policies/${policy}/$value`)
-      .putStream(fileStream);
+    if (fs.existsSync(file)) {
+      let fileStream = fs.createReadStream(file);
+      let response = await client
+        .api(`trustFramework/policies/${policy}/$value`)
+        .putStream(fileStream);
 
-    core.info('Wrote policy using Microsoft Graph');
+      core.info('Policy file ' + file + ' has been updated successfully.');
+    }
+    else
+    {
+      core.notice('Policy file ' + file + ' not found.')
+    }
+
   } catch (error) {
     let errorText = error.message ?? error;
     core.error('Action failed: ' + errorText);
