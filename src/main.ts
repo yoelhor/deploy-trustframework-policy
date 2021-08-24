@@ -12,6 +12,8 @@ async function main() {
     const clientId = core.getInput('clientId');
     const clientSecret = core.getInput('clientSecret');
 
+    core.info('Uploading policy file ' + file);
+
     let client = Client.initWithMiddleware({
       authProvider: new ClientCredentialsAuthProvider(
         tenant,
