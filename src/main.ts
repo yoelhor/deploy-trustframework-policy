@@ -23,19 +23,19 @@ async function main() {
       defaultVersion: 'beta'
     });
 
-    if (fs.existsSync(file)) {
+    //if (fs.existsSync(file)) {
       let fileStream = fs.createReadStream(file);
       let response = await client
         .api(`trustFramework/policies/${policy}/$value`)
         .putStream(fileStream);
 
       core.notice('Policy file ' + file + ' has been uploaded successfully.');
-    }
-    else
-    {
-      core.error('Policy file ' + file + ' not found.')
-      core.setFailed();
-    }
+    //}
+    //else
+    //{
+    //  core.error('Policy file ' + file + ' not found.')
+    //  core.setFailed();
+    //}
 
   } catch (error) {
     let errorText = error.message ?? error;
